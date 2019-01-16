@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Magic Force | Web Creative Team</title>
+   <meta name="description" itemprop="description" content="We are active in TOKYO.">
+   <meta name="keywords" content="web,">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+   <!-- <link rel="stylesheet" href="./style.css"> -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+   <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.7.2/jquery.smooth-scroll.min.js"></script> -->
+   <!-- <script type="text/javascript" src="./js/application.js"></script> -->
+   <!-- icon -->
+   <!-- <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" sizes="152x152">
+   <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
+   <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/android-chrome.png" sizes="192x192" type="image/png">
+   <link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/site.webmanifest">
+   <link rel="mask-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/safari-pinned-tab.svg" color="#7d7d7d">
+   <meta name="msapplication-TileColor" content="#ffc40d">
+   <meta name="theme-color" content="#ffffff"> -->
+   <!-- Fontawsome -->
+   
+   
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" style="overflow-x: hidden;width: 100%;position: relative;">
+
+<div class="p-wrapper" style=""> 
+   <header class="p-header" style="">
+      <a href="/">
+         <img src="./images/logo_000.png" alt="Magic Force logo" width="160">
+      </a>
+   </header>
+   <section class="p-fv" style="">
+      <div class="p-main-copy" style="">
+         <h1 class="title">Magic Force</h1>
+         <h2 class="title">web creative team</h2>
+         <h3 class="title">We are active in Tokyo.</h3>
+      </div>
+   </section>
+   <div class="button">restart</div>
+   <div style="position: absolute;bottom: 0;left: 0;padding-bottom: 6px;width: 100%;height: auto;text-align: center;">
+      <small>Copyrights © Magic Force all rights reserved.</small>
+   </div>
+</div>
+
+</body>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
+.p-wrapper {
+   position: relative;
+   background-color: #444;
+   background: linear-gradient(to bottom, #405166 0%, #656f6f 100%);
+   /*background-image: url();*/
+   background-position: center center;
+   background-size: cover;
+}
+.p-header {
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding: 8px 0 8px 8px;
+}
+.p-fv {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.p-main-copy {
+   text-align: center;
+   padding-bottom: 64px;
+
+   margin: 0;
+   color: #fff;
+   font-family: 'Fjalla One', sans-serif;
+   font-size: 24px; /*sp size*/
+   line-height: 28px;/*sp size*/
+   letter-spacing: 2px;
+}
+
+.title {
+  transform: rotate(-10deg);
+  display: block;
+}
+.title span {
+  transform: skew(-10deg);
+  display: inline-block;
+  text-shadow: #533d4a 1px 1px, #533d4a 2px 2px, #533d4a 3px 3px, #533d4a 4px 4px, #533d4a 5px 5px, #533d4a 6px 6px;
+  min-width: 10px;
+  min-height: 10px;
+  position: relative;
+}
+
+.title:nth-child(1) {
+  color: #e55643;
+}
+.title:nth-child(2) {
+  color: #2b9f5e;
+}
+.title:nth-child(3) {
+  color: #f1c83c;
+}
+
+.button {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-10deg);
+  color: #e55643;
+  text-transform: uppercase;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  font-family: 'Fjalla One', sans-serif;
+}
+.button span {
+  transform: skew(-10deg);
+  display: inline-block;
+  text-shadow: #533d4a 1px 1px, #533d4a 2px 2px, #533d4a 3px 3px, #533d4a 4px 4px;
+}
+
+</style>
+
+<script>
+   $(document).ready(function() {
+     $(".title").lettering();
+     $(".button").lettering();
+   });
+
+   $(document).ready(function() {
+     animation();
+   }, 1000);
+
+   $('.button').click(function() {
+     animation();
+   });
+
+   function animation() {
+     var title1 = new TimelineMax();
+     title1.to(".button", 0, {visibility: 'hidden', opacity: 0})
+     title1.staggerFromTo(".title span", 0.5, 
+     {ease: Back.easeOut.config(1.7), opacity: 0, bottom: -80},
+     {ease: Back.easeOut.config(1.7), opacity: 1, bottom: 0}, 0.05);
+     title1.to(".button", 0.2, {visibility: 'visible' ,opacity: 1})
+   }
+</script>
